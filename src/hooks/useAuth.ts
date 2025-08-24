@@ -1,7 +1,7 @@
-import {User} from '@/types/user'
+import { User } from '@/types/user'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import {create} from 'zustand'
-import {createJSONStorage, persist} from 'zustand/middleware'
+import { create } from 'zustand'
+import { createJSONStorage, persist } from 'zustand/middleware'
 
 interface AuthState {
   isLoggedIn: boolean
@@ -35,8 +35,8 @@ export const useAuth = create<AuthState>()(
           if (json) {
             const data = JSON.parse(json)
             set({
-              isLoggedIn: data?.isLoggedIn || false,
-              user: data?.user || null,
+              isLoggedIn: data?.data.isLoggedIn || false,
+              user: data?.data.user || null,
             })
           }
         } catch (error) {
