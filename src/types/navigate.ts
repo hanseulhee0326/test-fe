@@ -1,5 +1,5 @@
-import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs'
-import {StackNavigationProp} from '@react-navigation/stack'
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs'
+import { StackNavigationProp } from '@react-navigation/stack'
 
 export type AuthStackParamList = {
   Signin: undefined
@@ -15,7 +15,7 @@ export type BottomTabParamList = {
 export type RootStackParamList = {
   Home?: {screen: keyof BottomTabParamList}
   TodoList: undefined
-  TodoForm: undefined
+  TodoForm?: { todoId?: string };
   TodoDetail: {todoId: string}
   TodoSuccess: undefined
   TodoGraph: undefined
