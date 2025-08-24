@@ -79,7 +79,7 @@ function TodoDetail({navigation, route}: TodoDetailProps) {
 
       <DefaultText style={{marginVertical: 8}}>
         {todo.startDate ? formatDate(todo.startDate) : formatDate(new Date())} ~ {''}
-        {todo.endDate ? formatDate(todo.endDate) : ' ~'}
+        {todo.endDate && formatDate(todo.endDate)}
       </DefaultText>
 
       <StyledDescriptionWrapper>
