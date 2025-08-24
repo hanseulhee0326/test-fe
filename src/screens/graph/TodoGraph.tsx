@@ -72,8 +72,9 @@ const StyledContentWrapper = styled(View)`
 `
 
 const StyledCategoryWrapper = styled(View)`
-  margin-top: 20px;
+  margin-top: 15px;
   align-items: center;
   justify-content: center;
   width: 100%;
+  gap: 10px;
 `
