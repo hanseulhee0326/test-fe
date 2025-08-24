@@ -43,6 +43,4 @@ const StyledIconButton = styled(TouchableOpacity)`
 const StyledRightWrapper = styled(View)`
   position: absolute;
   right: 0;
-  top: 0;
-  bottom: 0;
 `
