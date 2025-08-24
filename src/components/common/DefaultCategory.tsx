@@ -1,8 +1,8 @@
 import DefaultText from '@/components/common/DefaultText'
 import styled from '@emotion/native'
-import {Theme} from '@emotion/react'
-import {FC} from 'react'
-import {TextProps, TextStyle, View} from 'react-native'
+import { Theme } from '@emotion/react'
+import { FC } from 'react'
+import { TextProps, TextStyle, View } from 'react-native'
 
 interface DefaultCategoryProps extends TextProps {
   fontWeight?: number
@@ -12,6 +12,7 @@ interface DefaultCategoryProps extends TextProps {
   content: string
   type?: 'title' | 'label' | 'text'
   size?: keyof Theme['fontSize']['title']
+
 }
 
 const DefaultCategory: FC<DefaultCategoryProps> = ({
@@ -23,6 +24,7 @@ const DefaultCategory: FC<DefaultCategoryProps> = ({
   type,
   size,
 }) => {
+
   return (
     <StyledWrapper backgroundColor={backgroundColor} style={style}>
       <DefaultText color={color} type={type} size={size} fontWeight={fontWeight}>
@@ -34,12 +36,12 @@ const DefaultCategory: FC<DefaultCategoryProps> = ({
 
 export default DefaultCategory
 
-const StyledWrapper = styled(View)<{backgroundColor?: string}>`
+const StyledWrapper = styled(View) <{ backgroundColor?: string }>`
   flex-direction: row;
+  align-items: center;
   justify-content: center;
-  align-self: flex-start;
   border-radius: 20px;
-  background-color: ${({backgroundColor, theme}) => backgroundColor || theme.color.orange};
+  background-color: ${({ backgroundColor, theme }) => backgroundColor || theme.color.orange};
   padding: 0px 15px;
-  min-height: 28px;
+  min-height: 28px; 
 `
