@@ -43,6 +43,7 @@ export default AuthLayout
 const StyledWrapper = styled(View)`
   flex: 1;
   padding: 0 20px;
+  background-color: ${({ theme }) => theme.color.white};
 `
 
 const StyledLogoWrapper = styled(View)`
