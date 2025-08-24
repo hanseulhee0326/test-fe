@@ -15,9 +15,9 @@ export type BottomTabParamList = {
 export type RootStackParamList = {
   Home?: {screen: keyof BottomTabParamList}
   TodoList: undefined
-  TodoForm?: { todoId?: string };
+  TodoForm?: { todoId?: string }
   TodoDetail: {todoId: string}
-  TodoSuccess: undefined
+  TodoSuccess?: { todoId?: string }
   TodoGraph: undefined
   Signin: undefined
   SignUp: undefined
