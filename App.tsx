@@ -1,45 +1,24 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+import { useThemeStore } from '@/stores/theme'
+import { darkTheme, lightTheme } from '@/styles/theme'
+import styled from '@emotion/native'
+import { ThemeProvider } from '@emotion/react'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import RootNavigator from './src/navigators/RootNavigator'
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  const {isDark} = useThemeStore()
 
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
-  );
+    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+      <StyledWrapper>
+        <RootNavigator />
+      </StyledWrapper>
+    </ThemeProvider>
+  )
 }
 
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
+export default App
 
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;
+const StyledWrapper = styled(SafeAreaView)`
+  flex: 1;
+`
